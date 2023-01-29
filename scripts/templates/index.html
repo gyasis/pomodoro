@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MP3 to WAV Converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">MP3 to WAV Converter</h1>
+        <form method="post" enctype="multipart/form-data" class="mx-auto" style="width: 50%;">
+            <div class="form-group">
+                <label for="input_file">Input MP3 File:</label>
+                <input type="file" class="form-control-file" id="input_file" name="input_file" accept=".mp3" required>
+            </div>
+            <div class="form-group">
+                <label for="output_file">Output WAV File:</label>
+                <input type="file" class="form-control-file" id="output_file" name="output_file" accept=".wav" required>
+            </div>
+            <input type="submit" value="Convert" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+
+</html>
