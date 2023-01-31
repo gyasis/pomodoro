@@ -3,12 +3,14 @@ import time
 import pygame
 from tqdm import tqdm
 
-def main(session_minutes=20, break_minutes=5, rounds=10):
+def main(session_minutes=25, break_minutes=5, rounds=5):
     # Initialize pygame mixer
     pygame.mixer.init()
 
     # Load sound file
-    sound = pygame.mixer.Sound("sound.wav")
+    sound = pygame.mixer.Sound("sounds/sound.wav")
+    
+    victory = pygame.mixer.Sound("sounds/victory.wav")
 
     for i in range(rounds):
         # Start timer
@@ -29,9 +31,11 @@ def main(session_minutes=20, break_minutes=5, rounds=10):
             sound.play()
             time.sleep(5)
             sound.stop()
-
+    victory.play()
     print("Pomodoro completed!")
-
+    time.sleep(8)
+    victory.stop()
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Pomodoro Timer app')
     parser.add_argument('session_minutes', type=int, nargs='?', default=20, help='Session time in minutes')
